@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;  /* If you set box-sizing: border-box; on an element, padding and border are included in the width and height */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* vh oznacza jeden procent (czyli 0.01 ) aktualnego rozmiaru wysokości płaszczyzny, na której została wyświetlona dana strona internetowa.*/
+  /* margin: 0; */
+  transition: background 0.2s linear;
+}
+body.dark {
+  background-color: #353944;
+}
+body.dark p {
+  color: #fff;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;  /* absolut odrywa element; umiejscawia go "w powietrzu" na pozycji 0.0 (lewy górny róg) rodzica relative */
+}
+.checkbox:checked + .label {  /* na klikniecie checkboxa bądź labelki */
+  background-color: #292c35c6;
+}
+.checkbox:checked + .label .ball {
+  transform: translateX(60px);
+}
+
+.label {
+  background-color: rgb(242, 206, 87);
+  height: 40px;
+  width: 100px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  /* transform: scale(1.5); */
+}
+
+.ball {
+  width: 34px;
+  height: 34px;
+  left: 3px;
+  border-radius: 17px;
+  background-color: rgb(235, 235, 235);
+  position: absolute;
+  transition: 0.2s linear;  /* transition bez przypisanej wartości zmienia wszystko przy animacji co się da */
+}
+
+img {
+  height: 100%; 
+  /* transform: scale(0.3);  scale zmniejsza obrazek ale nie jego pojemnik - bounding box */
+}
